@@ -1,61 +1,168 @@
-# **Pre-Class Study: Getting Ready for NumPy**
+# Pre-work for “NumPy for Data Analysts” (3-hour Lab)
 
-Welcome to Lesson 1.6\! In this session, we transition from SQL databases to the "engine" of Python data science: **NumPy**.
+To make the most of our session, please complete this short pre-work before class.  
+It should take about 30–45 minutes.
 
-## **1\. Setup & Installation**
+**Watch [NumPy Intro Video](https://www.youtube.com/watch?v=SuI27ERy0-A)**
 
-To ensure we can start coding immediately, please complete these steps before class. We recommend using `conda` to manage your environment.
+## 1\. What is a Jupyter Notebook?
 
-### **A. Environment Preparation**
+During the lab we will work in **Jupyter notebooks**, either in Google Colab or VS Code.
 
-1. Open your terminal (or Anaconda Prompt).  
-2. Create or activate your course environment:
+A Jupyter notebook is an interactive document that can contain:
 
+- Code cells (that you can run)  
+- Text cells (explanations, instructions, notes)  
+- Outputs (tables, charts, printed results)
+
+You run each code cell independently and see the result immediately below it.  
+We’ll use notebooks to experiment with NumPy and to complete hands-on exercises.
+
+If you have never seen a notebook before:
+
+- Watch a short introduction video (any 5–10 min overview is fine), or  
+- Read a brief introduction from the Jupyter or Colab docs.
+
+You do **not** need to understand everything yet; just get familiar with:
+
+- What a “cell” is  
+- How to run a cell  
+- How to see output
+
+---
+
+## 2\. Using Google Colab (browser option)
+
+If you plan to use **Google Colab** in the browser:
+
+### 2.1. Requirements
+
+- A Google account (Gmail or Workspace)  
+- Google Chrome browser
+
+### 2.2. Install the “Open in Colab” Chrome extension
+
+This extension lets you open GitHub-hosted notebooks in Colab with one click. [chromewebstore.google](https://chromewebstore.google.com/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo?hl=en-US&utm_source=ext_sidebar)
+
+1. Open the Chrome Web Store page for **Open in Colab**. [chromewebstore.google](https://chromewebstore.google.com/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo?hl=en-US&utm_source=ext_sidebar)  
+2. Click **Add to Chrome** and confirm.  
+3. After installation, you should see the extension icon in your Chrome toolbar.
+
+What it does:
+
+- On GitHub, you’ll see an “Open in Colab” button for notebooks.  
+- Clicking it will open the notebook directly in Colab so you can run the code. [chromewebstore.google](https://chromewebstore.google.com/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo?hl=en-US&utm_source=ext_sidebar)
+
+### 2.3. Test Colab
+
+Before class:
+
+1. Go to [https://colab.research.google.com](https://colab.research.google.com)  
+     
+2. Click **New notebook**.  
+     
+3. In the first cell, type:
+
+```py
+import numpy as np
+np.__version__
 ```
-# If you have the environment.yml file:
-conda env create -f environment.yml
 
-# Or activate your existing environment:
-conda activate pds
+4. Click **Run** (the ▶ button on the left of the cell) and confirm it runs without errors.
+
+If this works, your Colab setup is ready.
+
+---
+
+
+## 3. Using VS Code (desktop option)
+
+If you prefer to work in **VS Code**, you can either run notebooks **locally** or connect VS Code to **Google Colab** as the execution environment.
+
+### 3.1. Install required VS Code extensions
+
+In VS Code:
+
+1. Open the **Extensions** panel (left sidebar, square icon).  
+2. Install these extensions:  
+   - **Python** (by Microsoft)  
+   - **Jupyter** (by Microsoft) – adds notebook support in VS Code  
+   - **Colab** (VS Code extension) – lets you use Google Colab as a compute environment from VS Code
+
+After installation, restart VS Code if prompted.
+
+### 3.2. Test Jupyter notebooks in VS Code (local Python)
+
+1. Open VS Code.  
+     
+2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).  
+     
+3. Type **Jupyter: Create New Jupyter Notebook** and select it.  
+     
+4. In the first cell, type:
+
+```py
+import numpy as np
+np.__version__
 ```
 
-### **B. Installing NumPy**
+5. Run the cell (click the ▶ button).  
+     
+6. Confirm that the output shows a NumPy version and no error.
 
-If NumPy is not already in your environment, you can install it using one of the following commands:
+If this works, your local Jupyter environment in VS Code is ready.
 
-* **Using Conda (Recommended):**
+### 3.3. (Optional) Use Colab as the environment in VS Code
 
+If you installed the **Colab** extension, you can run notebooks on Colab from within VS Code:
+
+1. Sign into your Google account in the Colab extension if prompted.  
+     
+2. Open a `.ipynb` notebook in VS Code.  
+     
+3. Use the Colab extension UI to select Colab as the kernel / compute environment (the exact command name may vary slightly depending on extension version).  
+     
+4. Run a test cell:
+
+```py
+import numpy as np
+np.__version__
 ```
-conda install numpy
-```
 
-*   
-  **Using Pip:**
+If this runs successfully, you are ready to use Colab’s backend while working in the VS Code interface.
 
-```
-pip install numpy
-```
 
-### **C. VSCode Configuration**
+---
 
-1. Open VSCode and verify the **Jupyter** extension is installed.  
-2. Open the provided `numpy_workshop.ipynb`.  
-3. In the top right, click **Select Kernel** and choose your `pds` environment.
+## 4\. Choose your environment for class
 
-## **2\. Prerequisites Recap**
+For the lab, please **choose one** environment:
 
-We assume you are comfortable with:
+- **Option A – Google Colab (recommended for beginners):**  
+    
+  - Chrome \+ “Open in Colab” extension installed  
+  - You have successfully run a Colab notebook with `import numpy as np`
 
-* **Python Lists:** Understanding how to store and access elements in `[1, 2, 3]`.  
-* **Basic Math:** Operators like `*`, `/`, and `**`.  
-* **VSCode Basics:** Opening folders and editing files.
 
-## **3\. Introduction: Why NumPy? (Reading)**
+- **Option B – VS Code with Jupyter:**  
+    
+  - Python 3.x installed  
+  - VS Code installed with Python and Jupyter extensions  
+  - You have successfully run a notebook cell with `import numpy as np`
 
-While Python lists are flexible, they are slow for data science. Imagine you have 1,000,000 rows of sales data. To multiply every row by a 10% tax in a Python list, Python has to look at every single "box" one by one, check what's inside, and then do the math.
+You do **not** need to install NumPy separately if you use Colab; it is already included.
 
-**NumPy (Numerical Python)** changes this. It uses **Vectorization**, which allows it to perform math on the entire "block" of data at once. It is often 10x to 100x faster than standard Python and uses much less memory.
+---
 
-**Key Concept to Watch For:** The `ndarray`. This is the primary object we will use to hold our data. Unlike a Python list, every item in an `ndarray` *must* be the same data type (e.g., all integers or all floats).
+## 5\. What you do *not* need before class
 
-**Goal for Class:** Move from "looping through data" to "performing operations on data blocks."
+You do **not** need to:
+
+- Know advanced Python features  
+- Know linear algebra
+
+We will build everything step by step in class, using guided exercises.
+
+---
+
+If you get stuck during pre-work (extension installation, Colab, or VS Code setup), please take a screenshot of the error and bring it to class or share it in Discord ahead of time.  
